@@ -11,6 +11,7 @@ Navigate to the project root and run the following command from CLI:
 ```sh
 docker-compose up -d
 ```
+App default port: 6666
 
 ## API
 
