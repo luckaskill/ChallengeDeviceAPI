@@ -1,0 +1,17 @@
+server:
+  port: 6666
+  error:
+    include-message: always
+spring:
+  mvc:
+    format:
+      date-time: iso
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017
+      database: devices-challenge
+challenge:
+  data:
+    mongodb:
+      liquibase:
+        changelog: db/changelog/changelog.yaml

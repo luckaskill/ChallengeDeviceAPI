@@ -1,0 +1,26 @@
+#file: noinspection YAMLSchemaValidation
+databaseChangeLog:
+  - changeSet:
+      id: 001-create-devices-collection
+      author: dkavialkou
+      changes:
+        - createCollection:
+            collectionName: devices
+  - changeSet:
+      id: 002-create-device-collection-indexes
+      author: dkavialkou
+      comment: Create index on brand and createdAt field
+      changes:
+        - createIndex:
+            collectionName: devices
+            keys: '{"brand": 1}'
+            options: '{"background": true, "name": "brand_index"}'
+  - changeSet:
+      id: 003-create-device-collection-unique-index
+      author: dkavialkou
+      comment: Create unique index on band and name fields
+      changes:
+        - createIndex:
+            collectionName: devices
+            keys: '{"brand": 1, "name": 1}'
+            options: '{"background": true, "name": "brand_name_index", "unique": true}'

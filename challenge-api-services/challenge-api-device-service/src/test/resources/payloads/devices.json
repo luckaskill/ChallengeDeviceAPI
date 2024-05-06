@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "name": "Inone 10",
+    "brand": "Elppa",
+    "createdAt": "2020-01-01T00:00:00.000Z",
+    "lastUpdate": "2020-01-31T00:00:00.000Z"
+  },
+  {
+    "id": 2,
+    "name": "Droidan 10",
+    "brand": "Droidan",
+    "createdAt": "2020-01-01T00:00:00.000Z",
+    "lastUpdate": "2020-01-31T23:59:59.000Z"
+  },
+  {
+    "id": 3,
+    "name": "Inone 1020",
+    "brand": "Elppa",
+    "createdAt": "2020-02-01T23:59:59.000Z",
+    "lastUpdate": "2020-02-29T00:00:00.000Z"
+  }
+]

@@ -1,0 +1,32 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.2.5</version>
+    </parent>
+
+    <!--This is the narrowly focused task without a global idea of the project. So the name is very abstract-->
+    <groupId>com.challenge</groupId>
+    <artifactId>challenge-api-all</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0</version>
+
+    <modules>
+        <module>challenge-api-services</module>
+        <module>challenge-api-dto</module>
+        <module>challenge-api-commons</module>
+    </modules>
+
+    <properties>
+        <java.version>21</java.version>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
+        <spring-boot-maven-plugin.version>3.0.7</spring-boot-maven-plugin.version>
+        <embedded-mongo.version>4.11.0</embedded-mongo.version>
+    </properties>
+
+</project>

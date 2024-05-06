@@ -1,0 +1,22 @@
+version: '3.8'
+services:
+  device-service:
+    build: .
+    ports:
+      - "6666:6666"
+    environment:
+      - MONGODB_URI=mongodb://mongo:27019/
+      - MONGODB_DATABASE=devices-challenge
+    depends_on:
+      - mongo
+
+  mongo:
+    image: mongo:5.0.3
+    ports:
+      - "27019:27019"
+    volumes:
+      - mongodb_data:/data/db
+    command: [ "mongod", "--port", "27019" ]
+
+volumes:
+  mongodb_data:

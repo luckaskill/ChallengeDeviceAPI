@@ -1,0 +1,16 @@
+spring:
+  data:
+    mongodb:
+      database: devices-test
+  mvc:
+    format:
+      date-time: iso
+challenge:
+  data:
+    mongodb:
+      liquibase:
+        changelog: db/changelog/changelog.yaml
+de.flapdoodle:
+  mongodb:
+    embedded:
+      version: 5.0.3
