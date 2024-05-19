@@ -1,4 +1,4 @@
-package com.challenge.service.device.service.impl;
+package com.challenge.service.device.service.device.impl;
 
 import com.challenge.dto.device.DeviceDto;
 import com.challenge.dto.device.filter.DeviceFilter;
@@ -10,7 +10,7 @@ import com.challenge.general.utils.StringUtils;
 import com.challenge.service.device.domain.DeviceMeta;
 import com.challenge.service.device.domain.document.DeviceDocument;
 import com.challenge.service.device.exception.DeviceAlreadyExistsException;
-import com.challenge.service.device.service.DeviceService;
+import com.challenge.service.device.service.device.DeviceService;
 import com.challenge.service.device.service.mapper.DocumentMapper;
 import com.challenge.service.device.service.mapper.DtoMapper;
 import com.challenge.starter.mongo.utils.CriteriaUtils;

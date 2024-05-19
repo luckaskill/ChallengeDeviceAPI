@@ -7,7 +7,7 @@ import com.challenge.general.utils.DateUtils;
 import com.challenge.service.device.PayloadUtils;
 import com.challenge.service.device.configuraion.DeviceServiceTestConfiguration;
 import com.challenge.service.device.domain.document.DeviceDocument;
-import com.challenge.service.device.service.DeviceService;
+import com.challenge.service.device.service.device.DeviceService;
 import com.challenge.starter.Navigation;
 import com.challenge.starter.controller.ControllerAdvice;
 import com.fasterxml.jackson.core.type.TypeReference;

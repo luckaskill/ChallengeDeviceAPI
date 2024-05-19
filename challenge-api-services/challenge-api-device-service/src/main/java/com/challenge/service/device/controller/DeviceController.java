@@ -2,7 +2,7 @@ package com.challenge.service.device.controller;
 
 import com.challenge.dto.device.DeviceDto;
 import com.challenge.dto.device.filter.DeviceFilter;
-import com.challenge.service.device.service.DeviceService;
+import com.challenge.service.device.service.device.DeviceService;
 import com.challenge.starter.Navigation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;

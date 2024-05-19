@@ -1,4 +1,4 @@
-package com.challenge.service.device.service;
+package com.challenge.service.device.service.device;
 
 import com.challenge.dto.device.DeviceDto;
 import com.challenge.dto.device.filter.DeviceFilter;

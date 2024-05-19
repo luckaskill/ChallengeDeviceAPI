@@ -1,4 +1,4 @@
-package com.challenge.service.device.service.impl;
+package com.challenge.service.device.service.device.impl;
 
 import com.challenge.dto.device.DeviceDto;
 import com.challenge.dto.device.filter.DeviceFilter;
@@ -8,6 +8,7 @@ import com.challenge.general.utils.DateUtils;
 import com.challenge.service.device.configuraion.DeviceServiceTestConfiguration;
 import com.challenge.service.device.domain.document.DeviceDocument;
 import com.challenge.service.device.exception.DeviceAlreadyExistsException;
+import com.challenge.service.device.service.device.DeviceService;
 import com.challenge.starter.mongo.MongoLiquibaseAutoConfiguration;
 import com.challenge.starter.mongo.utils.ObjectIdUtils;
 import lombok.SneakyThrows;
@@ -16,14 +17,12 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
-import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.data.mongo.DataMongoTest;
 import org.springframework.context.annotation.Import;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.test.context.ActiveProfiles;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import java.time.LocalDateTime;
 import java.time.ZoneOffset;
@@ -37,7 +36,6 @@ import static org.junit.jupiter.api.Assertions.assertThrowsExactly;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @DataMongoTest
-@ExtendWith(SpringExtension.class)
 @ActiveProfiles("test")
 @Import({DeviceServiceTestConfiguration.class, MongoLiquibaseAutoConfiguration.class})
 class DeviceServiceImplIntegrationTest {
@@ -52,7 +50,7 @@ class DeviceServiceImplIntegrationTest {
 			= new DeviceDocument("Anrido y", "Samsung", DateUtils.fromIso("2020-12-31T23:59:59"));
 
 	@Autowired
-	private DeviceServiceImpl deviceService;
+	private DeviceService deviceService;
 
 	@Autowired
 	private MongoTemplate mongoTemplate;
