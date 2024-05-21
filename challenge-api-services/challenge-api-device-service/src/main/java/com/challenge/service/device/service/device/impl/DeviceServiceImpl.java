@@ -48,7 +48,7 @@ public class DeviceServiceImpl implements DeviceService {
 	@Override
 	public DeviceDto loadById(String id) {
 
-		Query query = asQuery(id);
+		Query query = QueryUtils.byId(id);
 		DeviceDocument deviceDocuments = mongoTemplate.findOne(query, DeviceDocument.class);
 		if (Objects.isNull(deviceDocuments)) {
 			throw new UnitNotFoundException(id, DeviceDocument.class);
@@ -79,9 +79,8 @@ public class DeviceServiceImpl implements DeviceService {
 		Optional.ofNullable(device.brand()).ifPresent(brand -> update.set(DeviceMeta.BRAND, brand));
 		Optional.ofNullable(device.name()).ifPresent(name -> update.set(DeviceMeta.NAME, name));
 		update.set(DeviceMeta.LAST_UPDATE, DateUtils.now());
-		update.set(CriteriaUtils.ID, device.id());
 
-		Query query = asQuery(device.id());
+		Query query = QueryUtils.byId(device.id());
 		try {
 			UpdateResult updateResult = mongoTemplate.updateFirst(query, update, DeviceDocument.class);
 			if (updateResult.getMatchedCount() == 0) {
@@ -95,15 +94,8 @@ public class DeviceServiceImpl implements DeviceService {
 	@Override
 	public void forget(String id) {
 
-		Query query = asQuery(id);
+		Query query = QueryUtils.byId(id);
 		mongoTemplate.remove(query, DeviceDocument.class);
-	}
-
-	private static Query asQuery(String id) {
-
-		Query query = new Query();
-		query.addCriteria(CriteriaUtils.byId(id));
-		return query;
 	}
 
 	private static Query asQuery(DeviceFilter filter) {

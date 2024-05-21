@@ -7,6 +7,11 @@ public interface QueryUtils {
 
 	Query EMPTY_QUERY = new EmptyQuery();
 
+	static Query byId(Object id) {
+
+		return new Query().addCriteria(CriteriaUtils.byId(id));
+	}
+
 	class EmptyQuery extends Query {
 
 		@SuppressWarnings("NullableProblems")
